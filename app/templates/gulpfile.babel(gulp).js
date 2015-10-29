@@ -2,6 +2,7 @@
 'use strict';
 
 import _ from 'lodash';
+import del from 'del';
 import gulp from 'gulp';
 import path from 'path';
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -233,10 +234,7 @@ gulp.task('lint:scripts:server', () => {
         .pipe(lintServerScripts());
 });
 
-gulp.task('clean:tmp', () => {
-    return gulp.src('.tmp', {read: false})
-        .pipe(plugins.clean());
-});
+gulp.task('clean:tmp', () => del(['.tmp/**/*']));
 
 gulp.task('start:client', cb => {
     whenServerReady(() => {
@@ -383,7 +381,7 @@ gulp.task('build', cb => {
         cb);
 });
 
-gulp.task('clean:dist', () => gulp.src('dist', {read: false}).pipe(plugins.clean()));
+gulp.task('clean:dist', () => del(['dist/**/*']));
 
 gulp.task('build:client', ['transpile:client', 'styles', 'html'], () => {
     var appFilter = plugins.filter('**/app.js');

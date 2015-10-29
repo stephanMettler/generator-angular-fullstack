@@ -38,13 +38,13 @@
   "devDependencies": {
     "autoprefixer": "^6.0.0",
     "babel-core": "^5.6.4",<% if(filters.gulp) { %>
+    "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-add-src": "^0.2.0",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-autoprefixer": "2.3.1",<% if(filters.babel) { %>
     "gulp-babel": "^5.1.0",<% } %>
     "gulp-cache": "^0.2.10",
-    "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^2.0.2",
     "gulp-imagemin": "^2.2.1",
